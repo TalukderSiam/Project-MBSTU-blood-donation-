@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="A+blood.css">
+</head>
+<body>
+ 
+  <script>
+    // Function to get URL parameter value
+    function getUrlParameter(name) {
+        name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+        var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+        var results = regex.exec(location.search);
+        return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+    };
+
+    // Get the data parameter from the URL
+    var receivedData = getUrlParameter('data');
+
+    // Display the received data
+   // document.getElementById('receivedData').textContent = receivedData;
+</script>
+
+
+
+
+
+
+
+
+    <h2>Select Department :  
+     <input type="text" name="department" id="department"> 
+    <button id="click"><a href="A+blood.html">Click</a></button>
+   
+    <table width="100%" cellpadding="10px" id="table-data" >
+        <tr>
+          <th >Student Name</th>
+          <th>Id</th>
+          <th >Number</th>
+          <th width="150px">Blood group</th>
+          <th width="70px">Department</th>
+        </tr>
+        <tbody id="load-table"></tbody>
+      </table>
+      
+
+
+      <script type="text/javascript" src="js/jquery.js"></script>
+      <script type="text/javascript">
+       $(document).ready(function(){
+        //Fetch All Records
+        function loadTable(){ 
+         // $("#load-table").html("");
+        var studentId = receivedData ;
+        var obj = {sid: studentId};
+        console.log(obj);
+        var myJSON = JSON.stringify(obj);
+          $.ajax({ 
+            url : 'http://localhost:3000/read_data_api.php',
+            type : "POST",
+            data: myJSON,
+            success : function(data){
+              if(data.status == false){
+                $("#load-table").append("<tr><td colspan='5'><h2>"+ data.message +"</h2></td></tr>");
+              }else{
+                $.each(data, function(key, value){ 
+                  $("#load-table").append("<tr>" + 
+                                          "<td>" + value.name + "</td>" + 
+                                          "<td>" + value.student_id +"</td>" + 
+                                          "<td>" + value.phone_number +"</td>" + 
+                                          "<td>" + value.blood_group +"</td>" + 
+                                          "<td>" + value.department +"</td>" +  
+                                          "</tr>");
+                });
+              }
+            }
+          });
+        }
+      
+        loadTable();
+      });
+
+</script>
+</body>
+</html>

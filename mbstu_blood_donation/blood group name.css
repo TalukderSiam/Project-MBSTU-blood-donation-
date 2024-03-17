@@ -1,0 +1,90 @@
+.nav-ber{
+    background-color:rgb(163, 10, 10);
+    height: 60px;
+    
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly ;
+    border: 3px solid black;
+}
+
+.side-option{
+    height: 650px;
+    width: 150px;
+    color: white;
+    color:rgb(163, 10, 10);
+    border: 3px solid black;
+    padding: 10px;
+    font-size: larger;
+}
+
+.blood-name{
+    height: 650px;
+    width: 100%;
+    background-color:bisque;
+    display: flex;
+    flex-wrap: wrap;
+    color: white;
+    border: 3px solid black;
+    
+    justify-content: space-evenly; /** think about blood group box that need to work with it**/
+    background-color: #e2e7e6;
+}
+
+.name-option{
+    display: flex;
+   
+    background-color:white;
+}
+
+
+.box{
+    margin-top: 15px;
+    border: 2px solid black;
+    height: 220px; 
+    width: 22%;
+    background-color: white;
+    padding: 20px 0px 20px;
+}
+
+.box-img{
+    height: 200px;
+    width: 100% ;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.box-content{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.box-img2{
+    height: 210px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+button {
+    background-color: green;
+    height: 28px;
+    width: 50px;
+    color: white;
+    position: relative;
+    
+    
+}
+
+
+
+#click {
+    left: 88px;
+    bottom: 10px;
+}
+
+button:hover {
+    border: 3px solid red;
+}
+

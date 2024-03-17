@@ -1,0 +1,51 @@
+body{
+    background-image: url(pngtree-simple-creative-world-blood-donation-day-public-welfare-publicity-background-design-image_952595.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+form{
+    padding: auto;
+    background-color:cornsilk;
+    margin: 120px auto;
+    padding: 50px;
+    width: 25%;
+    box-shadow: 10px 10px 5px black;
+    border-radius: 15px;
+}
+
+#register{
+    background-color:darkblue;
+    color: white;
+    padding: 5px;
+    font-size: larger;
+    font-weight: bold;
+    border-radius: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.register:hover, .register:focus,.register:active{
+    transform :scale(1.1);
+}
+
+#success-message,
+  #error-message{
+    background: #134b01;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    margin: 10px;
+    display: none;
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    z-index: 20;
+  }
+  #error-message{
+    background: #8b0209;
+    color:white;
+    font-weight: bold;
+    
+  }
+
+

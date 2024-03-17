@@ -1,0 +1,35 @@
+#bodyy {
+    padding: 20px; /* Adjust padding to your preference */
+    background-image: url(istockphoto-1256555401-2048x2048.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background-attachment: fixed;
+    display: flex;
+    /* Aligns content to the right */
+    align-items: center; /* Aligns content vertically */
+}
+
+form {
+    margin-left: 170%;
+    padding: 40px; /* Adjust padding to your preference */
+    background-color:red;
+    color: white;
+    text-transform: capitalize;
+    
+    width: 90%; /* Adjust width of the form */
+    max-width: 400px; /* Set a maximum width for responsiveness */
+    height: 250px;
+    box-shadow: 10px 10px 5px black;
+    border-radius: 25px;
+     /* Adjust margin to move the form to the left */
+}
+
+#login{
+    background-color:darkblue;
+    color: white;
+    padding: 5px;
+    font-size: larger;
+    border-radius: 10px;
+}
