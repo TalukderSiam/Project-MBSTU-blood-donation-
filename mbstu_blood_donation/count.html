@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #2d3342;
+        color: #fff;
+        font-family: "Muli", sans-serif;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      h1 {
+        font-size: 70px;
+        margin: 0;
+      }
+
+      p {
+        color: rgba(247, 131, 131, 0.8);
+        letter-spacing: 2px;
+        margin: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>This page was viewed</p>
+    <h1 id="count">0</h1>
+    <h1><span id="visitor-count">0</span></h1>
+    <p>times</p>
+    
+    <script>
+        // Retrieve the current visitor count from localStorage
+        let visitorCount = localStorage.getItem('visitorCount');
+
+        // If no visitor count exists, initialize it to 0
+        if (!visitorCount) {
+            visitorCount = 0;
+        } else {
+            // Convert the stored count from string to number
+            visitorCount = parseInt(visitorCount);
+        }
+
+        // Update the visitor count on the page
+        document.getElementById('visitor-count').innerText = visitorCount;
+
+        // Increment the visitor count and update localStorage
+        visitorCount++;
+        localStorage.setItem('visitorCount', visitorCount);
+    </script> 
+    
+  </body>
+</html>

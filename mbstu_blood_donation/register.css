@@ -47,5 +47,19 @@ form{
     font-weight: bold;
     
   }
+ 
 
+  .my-table {
+    border-collapse: separate; /* Make sure cells have independent borders */
+    border-spacing: 10px; /* Adjust the spacing between rows */
+  }
+  
+ 
+tr {
+    height: 5px; /* Set the height of each table row */
+}
 
+#blood input {
+  width: 180px; /* Set the desired width */
+ 
+}

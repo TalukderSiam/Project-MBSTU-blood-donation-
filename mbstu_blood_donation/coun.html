@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blood Donation FAQ</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 20px;
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+    .row {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 30px; /* Reduced margin between rows */
+    }
+
+    .box {
+        flex: 0 0 calc(25.33% - 40px); /* Adjusted to 33.33% for three boxes in a row */
+        background-color: #f0f0f0;
+        border: 1px solid black;
+        border-radius: 40px;
+        padding: 20px;
+        text-align: center;
+        aspect-ratio: 1; /* Added to make the boxes square */
+        margin-bottom: 20px; /* Reduced margin between boxes */
+        transition: transform 0.3s ease; /* Added transition effect */
+    } 
+
+    .box p {
+        margin-bottom: 10px;
+    }
+    .button {
+        display: inline-block;
+        padding: 8px 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        margin-top: 10px; /* Added margin to separate button from text */
+    }
+    .big-box {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        width: 60%;
+        max-width: 800px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .show {
+        display: block;
+    }
+
+    /* Add hover effect to the boxes */
+    .box:hover {
+        transform: scale(1.05); /* Increase size on hover */
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="box">
+            <p>Why should I donate blood?</p>
+            <button class="button" onclick="showAnswer(1)">Answer</button>
+        </div>
+        <div class="box">
+            <p>How often can I donate blood?</p>
+            <button class="button" onclick="showAnswer(2)">Answer</button>
+        </div>
+        <div class="box">
+            <p>What are the benefits of blood donation?</p>
+            <button class="button" onclick="showAnswer(3)">Answer</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="box">
+            <p>Can I donate blood if I have a medical condition?</p>
+            <button class="button" onclick="showAnswer(4)">Answer</button>
+        </div>
+        <div class="box">
+            <p>How does the blood donation process work?</p>
+            <button class="button" onclick="showAnswer(5)">Answer</button>
+        </div>
+        <div class="box">
+            <p>What are the requirements to donate blood?</p>
+            <button class="button" onclick="showAnswer(6)">Answer</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="box">
+            <p>Is blood donation safe?</p>
+            <button class="button" onclick="showAnswer(7)">Answer</button>
+        </div>
+        <div class="box">
+            <p>Can I donate blood if I've had a recent tattoo or piercing?</p>
+            <button class="button" onclick="showAnswer(8)">Answer</button>
+        </div>
+        <div class="box">
+            <p>What happens to my blood after I donate?</p>
+            <button class="button" onclick="showAnswer(9)">Answer</button>
+        </div>
+    </div>
+</div>
+
+<div id="bigBox" class="big-box">
+    <p id="answerText"></p>
+    <button class="button" onclick="hideAnswer()">Go Back</button>
+</div>
+
+<script>
+    const answers = [
+        "Donating blood helps save lives by providing essential blood transfusions to patients in need, such as those undergoing surgeries, suffering from trauma, or with chronic conditions.",
+        "In general, you can donate whole blood every 56 days, platelets every 7 days, and plasma every 28 days. However, this may vary depending on your country's regulations and the type of donation.",
+        "Blood donation not only helps others but also has health benefits for the donor, such as reducing the risk of heart disease and cancer through the removal of excess iron.",
+        "It depends on the specific medical condition. Some conditions may disqualify you from donating, while others may not. It's important to consult with a healthcare professional before donating blood.",
+        "The blood donation process typically involves registration, a mini-physical to check your vital signs, the actual donation, and post-donation refreshments. The entire process usually takes about an hour.",
+        "Requirements to donate blood vary by location, but generally, you must be in good health, weigh at least 110 pounds, and meet age requirements (usually 16-17 with parental consent or 18 without).",
+        "Yes, blood donation is safe for most people. The equipment used is sterile and disposable, and the process is closely supervised by trained healthcare professionals.",
+        "In most cases, you can still donate blood if you've had a recent tattoo or piercing, as long as it was done at a licensed facility and with sterile equipment.",
+        "After donation, your blood is tested for various diseases, blood type, and other factors. If it passes the tests, it is typically separated into components (red blood cells, plasma, platelets) and used for transfusions."
+    ];
+
+    function showAnswer(index) {
+        document.getElementById('bigBox').classList.add('show');
+        document.getElementById('answerText').innerText = answers[index - 1];
+    }
+
+    function hideAnswer() {
+        document.getElementById('bigBox').classList.remove('show');
+    }
+</script>
+
+</body>
+</html>

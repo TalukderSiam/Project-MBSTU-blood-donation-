@@ -62,6 +62,8 @@ $id =strtoupper($id);
 if ($duplicate_result->num_rows > 0) {
     echo json_encode(array('message' => 'Email Address Already Exits' ,'status' => false));
     $ans=-1;
+    
+
 } 
 else if($individualCharacters != $id){
     echo json_encode(array('message' => 'ID AND EMAIL NOT MATCHH ' ,'status' => false));
@@ -69,6 +71,9 @@ else if($individualCharacters != $id){
 
 //$sql = "INSERT INTO student (name,id,email) VALUES ('$name','$id','$email')";
 else {
+
+
+
 $sql = "INSERT INTO blood (name, student_id,blood_group,phone_number,department,email, password) VALUES ('$name', '$id', '$blood','$number','$department','$email','$password')";
 
 

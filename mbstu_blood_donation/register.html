@@ -10,7 +10,7 @@
      <center>
      <form  id="form" >
         <h1>WELCOME FOR REGISTER</h1>
-        <table>
+        <table class="my-table" >
         <tr>
             <td> <b>NAME : </b></td>
             <td><input type="text" name="name" id="name" required></td>
@@ -28,10 +28,23 @@
           <td></td>
           <td></td>
                   </tr>
-        <tr>
-            <td><b>BLOOD GROUP :</b></td>
-            <td><input type="text" name="blood" id="blood"  required></td>
-        </tr>
+                  <tr>
+                    <td><b>BLOOD GROUP :</b></td>
+                    <td>
+                        <select name="blood" id="blood" required>
+                            <option value="">Select</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                        </select>
+                    </td>
+                </tr>
+                
         <tr>
             <td><b>PHONE NUMBER : </b></td>
             <td><input type="text" name="number" id="number" required></td>
@@ -41,19 +54,28 @@
 <td></td>
         </tr>
         <tr>
-            <td><b>DEPARTMENT </b></td>
+            <td><b>DEPARTMENT : </b></td>
             <td><input type="text" id="department " name="department" required></td>
         </tr>
 
         <tr>
-            <td><b>EMAIL</b></td>
+            <td><b>EMAIL :</b></td>
             <td><input type="email" name="email" id="email" required ></td>
             
         </tr>
+
         <tr>
-            <td><b>PASSWORD</b></td>
+          <td><b>BATCH :</b></td>
+          <td><input type="number" name="batch" id="batch" required></td>
+      </tr>
+
+        <tr>
+            <td><b>PASSWORD :</b></td>
             <td><input type="password" name="password" id="password" required></td>
         </tr>
+        
+        
+
         <tr>
             <td></td>
             <td><input type="submit" value="Register" id="register" class="register"></td>
